@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-COMMERCE WEBESITE </title>
+    <link rel="stylesheet" href="style.css">
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+</head>
+<style>
+    /* Styles généraux */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+
+.Thehead {
+  background-color: #3e30d3;
+  color: #3a43ad;
+  padding: 10px 0;
+}
+
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Section shop */
+
+.section-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.shop-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-img {
+  width: 100%;
+  margin-bottom: 10px; 
+}
+
+.product-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  font-size: 1.1em;
+  color: #0070c9;
+}
+
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 360px;
+  min-height: 100vh;
+  padding: 20px;
+  background: #fff;
+  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+  transition: 0.3s;
+}
+
+.cart.active {
+  right: 0;
+}
+
+.cart-title {
+   text-align: center;
+   font-size: 1.5em;
+   font-weight: 600;
+   margin-top: 2rem;
+}
+
+.cart-box {
+  display: flex; 
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cart-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.detail-box {
+  display: grid;
+  row-gap: 0.5rem;
+}
+
+.cart-quantity {
+  width: 2.4rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  border-top: 1px solid #292c93;
+  padding-top: 0.5rem;
+}
+
+.btn-buy {
+  display: block;
+  margin: 1.5rem auto 0 auto; 
+  padding: 12px 20px;
+  border: none;
+  background: #0070c9;
+  color: #28459b;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-buy:hover {
+  background: #00609b;
+}
+</style>
+<body>
+    <header class="Thehead">
+        <nav class="Navbar">
+            <a href="#" class="Logo"><span class="mysp">E</span>COMMERCE</a>
+            <div class="myicon"><i class="fa-solid fa-bag-shopping fa-xl" style="color: #000000;" id="cart-icon"></i></div>
+            <!-- CART  -->
+            <div class="cart">
+                <h2 class="cart-title">Your Cart</h2>
+
+                <!-- CONTENT  -->
+                <div class="cart-content">
+            
+
+                </div>
+
+                <!-- TOTAL   -->
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">$0</div>
+                </div>
+                <!-- BUY BUTTON  -->
+                <button type="button" class="btn-buy">Buy Now</button>
+                <!-- CART CLOSE  -->
+                <i class='bx bx-x' id="cart-close"></i>
+            </div>
+        </nav>
+    </header>
+    <section class="shop container">
+        <h2 class="section-title">Shop Products</h2>
+        <div class="shop-content">
+            <!-- BOX 1 -->
+            <div class="product-box">
+                <img src="./51G93y3KZrL.jpg" alt="" class="product-img">
+                <h2 class="product-title">novel N 7</h2>
+                <span class="product-price">$79.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 2 -->
+            <div class="product-box">
+                <img src="./7be9c750-1f84-416f-a051-8915444aed31.jpg" alt="" class="product-img">
+                <h2 class="product-title">novel N 2</h2>
+                <span class="product-price">$59.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 3 -->
+            <div class="product-box">
+                <img src="./Volume_8.webp" alt="" class="product-img">
+                <h2 class="product-title">novel N 8</h2>
+                <span class="product-price">$29.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 4 -->
+            <div class="product-box">
+                <img src="./71GjofzwnKL._AC_UL600_SR600,600_.jpg" alt="" class="product-img">
+                <h2 class="product-title">novel N 4</h2>
+                <span class="product-price">$105</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 5 -->
+            <div class="product-box">
+                <img src="./The-Begining-after-the-End-Retrubution-Book-10.jpg" alt="" class="product-img">
+                <h2 class="product-title">novel N 10</h2>
+                <span class="product-price">$95</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 6 -->
+            <div class="product-box">
+                <img src="./7be9c750-1f84-416f-a051-8915444aed31.jpg" alt="" class="product-img">
+                <h2 class="product-title">novel n 0</h2>
+                <span class="product-price">$1400</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 7 -->
+            <div class="product-box">
+                <img src="./The-Begining-after-the-End-Retrubution-Book-10.jpg" alt="" class="product-img">
+                <h2 class="product-title">novel n 0</h2>
+                <span class="product-price">$1700</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- BOX 8 -->
+            <div class="product-box">
+                <img src="./7be9c750-1f84-416f-a051-8915444aed31.jpg" alt="" class="product-img">
+                <h2 class="product-title">novel N 0</h2>
+                <span class="product-price">$110.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    const cartIcon = document.querySelector("#cart-icon");
+const cart = document.querySelector(".cart");
+const closeCart = document.querySelector("#cart-close");
+
+cartIcon.addEventListener("click", () => {
+  cart.classList.add("active");
+});
+
+closeCart.addEventListener("click", () => {
+  cart.classList.remove("active");
+});
+if (document.readyState == "loading") {
+  document.addEventListener("DOMContentLoaded", start);
+} else {
+  start();
+}
+
+function start() {
+  addEvents();
+}
+
+function update() {
+  addEvents();
+  updateTotal();
+}
+
+function addEvents() {
+  let cartRemove_btns = document.querySelectorAll(".cart-remove");
+  console.log(cartRemove_btns);
+  cartRemove_btns.forEach((btn) => {
+    btn.addEventListener("click", handle_removeCartItem);
+  });
+
+
+  let cartQuantity_inputs = document.querySelectorAll(".cart-quantity");
+  cartQuantity_inputs.forEach((input) => {
+    input.addEventListener("change", handle_changeItemQuantity);
+  });
+
+  let addCart_btns = document.querySelectorAll(".add-cart");
+  addCart_btns.forEach((btn) => {
+    btn.addEventListener("click", handle_addCartItem);
+  });
+
+  const buy_btn = document.querySelector(".btn-buy");
+  buy_btn.addEventListener("click", handle_buyOrder);
+}
+
+let itemsAdded = [];
+
+function handle_addCartItem() {
+  let product = this.parentElement;
+  let title = product.querySelector(".product-title").innerHTML;
+  let price = product.querySelector(".product-price").innerHTML;
+  let imgSrc = product.querySelector(".product-img").src;
+  console.log(title, price, imgSrc);
+
+  let newToAdd = {
+    title,
+    price,
+    imgSrc,
+  };
+
+  if (itemsAdded.find((el) => el.title == newToAdd.title)) {
+    alert("This Item Is Already Exist!");
+    return;
+  } else {
+    itemsAdded.push(newToAdd);
+  }
+
+  let cartBoxElement = CartBoxComponent(title, price, imgSrc);
+  let newNode = document.createElement("div");
+  newNode.innerHTML = cartBoxElement;
+  const cartContent = cart.querySelector(".cart-content");
+  cartContent.appendChild(newNode);
+
+  update();
+}
+
+function handle_removeCartItem() {
+  this.parentElement.remove();
+  itemsAdded = itemsAdded.filter(
+    (el) =>
+      el.title !=
+      this.parentElement.querySelector(".cart-product-title").innerHTML
+  );
+
+  update();
+}
+
+function handle_changeItemQuantity() {
+  if (isNaN(this.value) || this.value < 1) {
+    this.value = 1;
+  }
+  this.value = Math.floor(this.value); // to keep it integer
+
+  update();
+}
+
+function handle_buyOrder() {
+  if (itemsAdded.length <= 0) {
+    alert("There is No Order to Place Yet! \nPlease Make an Order first.");
+    return;
+  }
+  const cartContent = cart.querySelector(".cart-content");
+  cartContent.innerHTML = "";
+  alert("Your Order is Placed Successfully :)");
+  itemsAdded = [];
+
+  update();
+}
+
+function updateTotal() {
+  let cartBoxes = document.querySelectorAll(".cart-box");
+  const totalElement = cart.querySelector(".total-price");
+  let total = 0;
+  cartBoxes.forEach((cartBox) => {
+    let priceElement = cartBox.querySelector(".cart-price");
+    let price = parseFloat(priceElement.innerHTML.replace("$", ""));
+    let quantity = cartBox.querySelector(".cart-quantity").value;
+    total += price * quantity;
+  });
+
+  total = total.toFixed(2);
+
+  totalElement.innerHTML = "$" + total;
+}
+
+function CartBoxComponent(title, price, imgSrc) {
+  return `
+    <div class="cart-box">
+        <img src=${imgSrc} alt="" class="cart-img">
+        <div class="detail-box">
+            <div class="cart-product-title">${title}</div>
+            <div class="cart-price">${price}</div>
+            <input type="number" value="1" class="cart-quantity">
+        </div>
+        <!-- REMOVE CART  -->
+        <i class='bx bxs-trash-alt cart-remove'></i>
+    </div>`;
+}
+</script>
+</html>
